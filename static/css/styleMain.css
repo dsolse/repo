@@ -1,0 +1,1275 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Indie+Flower&family=Libre+Baskerville:ital@1&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Source+Sans+Pro:wght@900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Indie+Flower&family=Libre+Baskerville:ital@1&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Source+Sans+Pro:wght@200;900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Fira+Sans:wght@900&family=Indie+Flower&family=Kalam&family=Libre+Baskerville:ital@1&family=Montserrat:wght@300&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Rubik:wght@900&family=Source+Sans+Pro:wght@200;900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Fira+Sans:wght@900&family=Homemade+Apple&family=Indie+Flower&family=Kalam&family=Libre+Baskerville:ital@1&family=Montserrat:wght@300&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Rubik:wght@900&family=Source+Sans+Pro:wght@200;400;900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Indie+Flower&family=Libre+Baskerville:ital@1&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Source+Sans+Pro:wght@900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Indie+Flower&family=Libre+Baskerville:ital@1&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Source+Sans+Pro:wght@200;900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Annie+Use+Your+Telescope&family=Bad+Script&family=Comforter&family=Dosis:wght@400;800&family=Fira+Sans:wght@900&family=Indie+Flower&family=Kalam&family=Libre+Baskerville:ital@1&family=Montserrat:wght@300&family=Playfair+Display:wght@800&family=Poiret+One&family=Quintessential&family=Qwitcher+Grypen&family=Roboto:wght@100;900&family=Rubik:wght@900&family=Source+Sans+Pro:wght@200;900&family=Tangerine&family=Ubuntu+Mono&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Kanit:wght@300&family=Lora:ital,wght@1,500&family=Merriweather+Sans&family=Mulish:wght@300&family=Orienta&family=Patua+One&family=Signika&family=Ubuntu+Mono&display=swap');
+
+/* BASE -------------------------------------------------------------*/
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro";
+}
+
+/*navbar ------------------------------------------------------------*/
+.navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1001;   
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #384637;
+    top: 0;
+    width: 100%;
+    font-size: 20px;
+}
+
+li {
+    float: left;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #748460;
+}
+
+.dropdown {
+    float: relative;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 20px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #5c725b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #748460;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* titulos y subtitulos */
+h1{
+    font-family: "Source Sans Pro";
+    color: #384637;
+}
+
+h2 {
+    padding-top: 50px;
+    font-family: "Source Sans Pro";
+    text-align: center;
+    color: #384637;
+}
+
+h3 {color: #384637;}
+
+.back-color1 {
+    background-color: #e6e5e0;
+    padding-bottom: 50px;
+}
+
+.back-color1 h2 {
+    color: #384637;
+    font-size: 55px;
+}
+
+.back-color2 {
+    background-color: #CDCFA6;
+    padding-bottom: 10px;
+}
+
+.back-color2 h2 {
+    color: #384637;
+    font-size: 55px;
+}
+
+.login{
+    float: right;
+}
+
+/* HOME -------------------------------------------------------------*/
+.container {
+    position: relative;
+}
+
+.inicio {
+    text-align: center;
+    padding-top: 250px;
+}
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.center h1 {
+    font-size: 200px;
+    color: #e6e5e0;
+}
+
+.ESEN {
+    font-size: 100px;
+    color: #e6e5e0;
+    font-family: "Source Sans Pro";
+}
+.background-cover { 
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url(../media/fotoInicio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img { 
+    width: 100%;
+    height: auto;
+    opacity: 0.75;
+}
+
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.container .btn:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+/* Boton ser voluntario */
+
+#scroll {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    position: fixed;
+    right:0;
+    top: 50%;
+    width:fit-content;
+    margin-top: 250px;
+    background-color: #2e7072;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1001;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.btn-volunteer {
+    color:#e6e5e0;
+}
+
+.btn-volunteer:hover:not(.active) {
+    background-color: #8AB9BB;
+}
+
+/* slideshow gallery */
+
+/* Position the image container (needed to position the left and right arrows) */
+.containerSlideshow {
+    margin: 50px 250px 50px 250px;
+    position: relative;
+}
+
+  /* Hide the images by default */
+.mySlides {
+    display: none;
+}
+.mySlides img {
+    width: 100%;
+}
+
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+  /* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+  /* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+  /* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  /* Six columns side by side */
+.column {
+    float: left;
+    width: 20%;
+}
+
+  /* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+/* slideshow de actividades */
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 30px;
+        background-color: #ffffff;
+        padding: 30px;
+        margin: 50px 100px 100px 100px;
+        height: auto;
+}      
+
+.grid-container > div {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* impacto ----------------------------------------------------------*/
+.intro-impacto {
+    text-align: center;
+    margin: 15px 200px 15px 200px;
+    color:#243119;
+    background-color: white; 
+}
+
+.intro-text {
+    padding: 10px;
+    color: black;
+}
+
+.intro-impacto h2 {
+    font-size: 55px;  
+}
+
+.intro-impacto p {
+    font-size: 1.7rem;  
+}
+
+#grid-impacto h3 {
+    font-size: 70px;
+    color: #CDCFA6;
+}
+
+.dato-impacto {
+    font-size: 25px;
+    color: black;
+    text-align: center;
+}
+
+#grid-impacto {
+    color:white;
+    gap:50px;
+    height: 50%;
+    padding: 50px 50px 0px 50px;
+    background-size: cover;  
+}
+
+#grid-impacto i {
+    font-size: 3em;
+    padding-bottom: 50px;
+}
+
+#grid-impacto i img{
+    width: 150px;
+}
+
+/* ABOUT --------------------------------------------------------------*/
+.fixed-alignment {
+    display: inline-flex;    
+    list-style: none;
+    align-items: center;
+}
+.text-box {
+    background-color: white;
+    padding: 100px;
+    width: 50%;
+    height: 400px;
+}
+
+.text-box2 {
+    background-color: white;
+    padding: 100px;
+    width: 55%;
+    height: 700px;
+}
+
+.picture-box {
+    background-image: url(../../static/media/miembros.png);
+    background-color: whitesmoke;
+    background-size: cover;
+    padding:150px;
+    width: 50%;
+    height: 500px;
+}
+.picture-box2 {
+    background-image: url(../../static/media/LogoColores.png);
+    background-color: whitesmoke;
+    background-size: cover;
+    padding:150px;
+    width: 45%;
+    height: 600px;
+}
+
+.text-quienes-somos {
+    text-align: left;
+    font-size: 1.5rem;
+}
+.frase  {
+    background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url(../../static/media/planta.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    background-attachment: fixed;
+}
+
+.frase h2 {
+    font-family: "Homemade Apple";
+    color: white;
+    font-size: 40px;
+    padding: 7%;
+}
+    
+/*teammates*/
+#junta-titulo {
+    font-size: 45px;
+}
+
+.center-contacts {
+    align-content: center;
+}
+
+.bloque_miembros{
+    align-items: center;
+    margin: 50px 100px 50px 100px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.caja_ref{
+    padding: 10px 50px 10px 50px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(4, 1, 58, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.caja_ref:hover{
+    background-color: rgb(245, 243, 243);
+}
+
+.imagen_ref{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.caja_ref_titulo{
+    margin: 20px 0;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.caja_ref_parrafo{
+    font-weight: 300;
+}
+
+.bloque_miembros2{
+    margin: 50px 270px 50px 270px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: 20px;
+    padding-bottom: 5rem;
+}
+
+/* mision vision valores */
+
+
+.mision-cover { 
+    width: 100%;
+    height:50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url(../../static/media/saveEarth.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.MVV-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+    padding: 30px;
+    margin: 50px 100px 0px 100px;
+    height: auto; 
+    margin-top: -80px;  
+}  
+
+.MVV-container > div {
+text-align: center;
+font-size: 30px;
+background-color: #f3f3f3;
+padding: 50px;
+}
+
+.MVV-text {
+    padding-top: 25px;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.MVV-container i img{
+    width: 200px;
+    padding: 25px;
+}
+
+#img-MVV {
+    background-image: url(../../static/media/rotuloMVV.jpg);
+    background-size: cover;
+    padding: none;
+    margin: none;
+    width: 400px;
+    height: 100%;
+}
+
+/* ACTIVIDADES --------------------------------------------------------*/
+
+.actividades-container {
+    width: 100%;
+    height: 500px;
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url(../../static/media/actividad.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.actividad-text {
+    text-align: left;
+    padding-left: 150px;
+    font-size: 40px;
+}
+
+.actividad-text h1{
+color: white;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerontop {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.left {
+    width: 50%;
+    height: 500px;
+    background: url(../media/limpieza.png) no-repeat center / cover;
+}
+
+.left1 {
+    width: 50%;
+    height: 500px;
+    background: url(../media/reciclaje.png) no-repeat center / cover;
+}
+.left2 {
+    width: 50%;
+    height: 500px;
+    background: url(../media/charlas.jpeg) no-repeat center / cover;
+}
+.left3 {
+    width: 50%;
+    height: 500px;
+    background: url(../media/otras.jpeg) no-repeat center / cover;
+}
+
+.right {
+    max-width: 50%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+.content p {
+    text-align: left;
+    color:black;
+}
+
+.content h1 {
+    text-align: left;
+    color: #a2432b;
+    font-size: 3.5rem;
+}
+
+.content p {
+    padding-top: 50px;
+    font-size: 1.25rem;
+    text-align: justify;
+    width:100%;
+}
+
+.btn-actividad {
+    text-align: right;
+}
+
+.btn-act {
+    width: 150px;
+    font-size: 1.15rem;
+}
+
+.content-act h1 {
+    font-size: 3rem;
+}
+.content-act p {
+    font-size: 1.25rem;
+    padding-top: 25px;
+}
+
+
+/* CONTACTO */
+
+.contact-container {
+    width: 100%;
+    height: 65vh;
+    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url(../../static/media/guantes-y-planta.jpg);
+    background-size: cover;
+}
+
+.inicio {
+    text-align: center;
+    padding-top: 250px;
+}
+
+.contact-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-text h1 {
+    font-size: 100px;
+    color: white;
+}
+
+.redes-sociales {
+    font-size: 25px;
+    color: white;
+    display:inline-flex;
+    gap: 200px;
+    padding: 50px;
+}
+
+.redes-iconos {
+    display: inline-flex;
+    color: white;
+    gap: 10px;
+}
+
+.redes-iconos a {
+    color: white;
+}
+
+/* contact form*/
+
+.form-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px;
+    gap: 75px;
+    height: auto; 
+    margin: 0px 20px 0px 20px;
+    font-size: 1.5rem;
+    align-items: center;
+}  
+.row {
+    padding-top: 15px;
+}
+
+.row input[type=submit] {
+    background-color: #8AB9BB;
+    color: white;
+    font-size: 1.15rem;
+    padding: 12px 100px;
+    margin-left: 42%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.row input[type=submit]:hover {
+    background-color: #2E7072;
+}
+
+.col-75 input, textarea {
+    font-size: 1.25rem;
+}
+
+.contact {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 30px;
+    background-color: white;
+    padding: 10px;
+}
+
+.contact > div {
+    background-color: f1f1f1;
+    text-align: center;
+    font-size: 30px;
+}
+
+.iconos {
+    margin: 50px;
+}
+/* Soy david agregue input[type=email] */
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #8ab9bb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #2e7072;
+}
+
+.contact-info {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* CONTACT BUTTON - POP UP MESSAGE */
+
+.center-btn-message {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+#click{
+    display: none;
+}
+.click-me{
+    display: block;
+    width: 160px;
+    height: 50px;
+    color: white;
+    background: #8ab9bb;
+    border: 1px solid #8ab9bb;
+    text-align: center;
+    font-size: 22px;
+    line-height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+.click-me:hover {
+    background: #2e7072;
+    color: white;
+}
+.content{
+    opacity: 0;
+    visibility: hidden;
+    width: 400px;
+    height: 350px;
+    background: white;
+    border-radius: 3px;
+    transition: .3s ease-in;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
+}
+#click:checked ~ .content{
+    opacity: 1;
+    visibility: visible;
+}
+.header-pop-up{
+    height: 68px;
+    background: #2e7072;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+.header-pop-up h2{
+    padding-left: 32px;
+    font-weight: normal;
+}
+.fa-times{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fa-check{
+    font-size: 50px;
+    color: #2e7072;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    border: 2px solid #2e7072;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 30px 0 0 160px;
+}
+.center .content p{
+    padding-top: 10px;
+    font-size: 19px;
+    color: #1a1a1a;
+    text-align: center;
+}
+.line{
+    position: absolute;
+    bottom: 65px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+.close-btn{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 1px solid #8ab9bb;
+    border-radius: 3px;
+    color: #8ab9bb;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.close-btn:hover{
+    background: #2e7072;
+    color: white;
+    transition: .5s;
+}
+
+/* LOGIN AND REGISTER */
+
+.frame {
+    width: 100%;
+    padding: 10px;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.15rem;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+  /* Set a style for all buttons */
+button {
+    background-color: #8ab9bb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+  /* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.signbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #8ab9bb;
+}
+
+  /* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container-login {
+    padding: 16px;
+}
+.container-button {
+    padding: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+span.psw {
+    justify-content: center;
+    display: flex;
+}
+
+span.psw a {
+    color: black;
+}
+
+.registrate {
+    align-items: center;
+}
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+  /* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+  /* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+  /* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+span.psw {
+    display: block;
+    float: none;
+}
+
+.cancelbtn {
+    width: 100%;
+}
+
+.signbtn {
+    align-items: center;
+}
+}
+
+
+.background-image-login {
+    background-image: url(../media/background-tree.jpg);
+    background-size:cover;  
+    height: 100vh;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+#contenedorcentrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    width: 100%;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+#login {
+    width: 50%;
+    padding: 50px;
+    color: white;
+    font-size: 1.15rem;
+    background-color: #51783f30;
+    
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    box-sizing: border-box;
+    
+    opacity: 1;
+    filter: alpha(opacity=1);
+}
+
+.recuerdame-contra {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 16px;
+    gap: 200px;
+}
+
+.btn-login input[type=submit] {
+    background-color: #ebdfc4;
+    color: #384637;
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* REGISTER */
+
+.frame-register {
+    width: 100%;
+    padding: 10px;
+}
+
+.background-image-register {
+    background-image: url(../media/background-tree.jpg);
+    background-size:cover;  
+}
+
+#register {
+    width: 70%;
+    padding: 50px;
+    color: white;
+    font-size: 1.15rem;
+    background-color: #38463760;
+}
+
+.columnas-register {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+/* PERFIL */
+.grid-perfil {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:30px;
+    background-color: #ced1cc;
+    padding: 50px 150px 50px 150px; 
+}
+
+.foto-perfil {
+    border-radius: 500px;
+    max-width: 250px;
+    max-height: auto;
+}
+
+.perfil-datos {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.dato {
+    font-size: 25px;
+    margin: 8px;
+    font-family: "Mulish";
+}
+
+.actividades-user {
+    width: 85%;
+    margin: 50px 0px 50px 100px;
+}
+
+.tabla-user {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.tabla-user td, .tabla-user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.tabla-user tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+  
+.tabla-user tr:hover {
+    background-color: #ddd;
+}
+  
+.tabla-user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50; 
+    color: white;
+}
+
+
+.logout_button {
+    padding: 0px 0px 50px 500px;
+    position: absolute;
+}
+
+.logout {
+    font-family: "Merriweather Sans";
+    font-size: 18px;
+    text-align: center;
+    margin-left: 550px;
+    border-style: none;
+    border-radius: 15px;
+    width: 200px;
+    height: 65px;
+    background-color: #8AB9BB;
+    box-shadow: 5px 5px 10px;
+    padding: 10px;
+    color: white;
+}
+
+.logout:hover {
+    background-color: #2E7072;
+}
+
+.logout_button a:hover {
+    color:black
+}

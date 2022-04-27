@@ -1,0 +1,76 @@
+{% extends './main/baseMain.html' %} {% block title %}Regístrate{% endblock %}
+{% block contents %}
+<h1>Regístrate</h1>
+
+
+<div class="background-image-register">
+  <div class="frame-register">
+    
+    <form method="post">
+      {{ form.hidden_tag() }}
+      
+      
+  
+      <div id="contenedor">
+        <div id="contenedorcentrado">
+          <div id="register">
+
+          {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+              {% for message in messages %}
+                <div class="alert">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                  <strong>No registrado!</strong> {{ message }}
+                </div>  
+              {% endfor %}  
+            {% endif %}  
+          {% endwith %}  
+
+            <div class="container">
+            
+            <div class="columnas-register">
+              <div>
+                <b>{{ form.correo.label }}</b>
+                {{ form.correo }}
+          
+                <b>{{ form.nombre.label }}</b>
+                {{ form.nombre }}
+          
+                <b>{{ form.apellido.label }}</b>
+                {{ form.apellido }}
+              </div>
+
+              <div> 
+                <b>{{ form.telefono.label }}</b>
+                {{ form.telefono }}
+          
+                <b>{{ form.carrera.label }}</b>
+                {{ form.carrera }}
+          
+                <b>{{ form.contrasenna.label }}</b>
+                {{ form.contrasenna }}
+          
+                <b>{{ form.contrasenna_2.label }}</b>
+                {{ form.contrasenna_2 }}
+              </div>
+            </div>
+
+            </div>
+  
+            <br>
+            <div class="btn-login">
+            {{ form.submit }}
+            </div>
+            <br>
+            <label>
+              <span class="psw">¿Ya tienes una cuenta? <a href="{{ url_for('main.login') }}"> ¡Inicia sesión!</a></span>
+            </label>
+          </div>
+        </div> 
+      </div>
+    </form>
+  </div>
+  </div>
+
+
+{% endblock %}

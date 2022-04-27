@@ -1,0 +1,94 @@
+{% extends './main/baseMain.html' %} {% block title %}¿Quiénes somos?{% endblock
+  %} {% block contents %}
+  
+  <div class="fixed-alignment"> 
+    
+    <div class="text-box">
+      <div class="text-quienes-somos">
+        <h1>¿Quiénes somos?</h1>
+        <br>
+        <p>
+          Somos una asociación estudiantil en pro del desarrollo 
+          sostenible cuyo objetivo es fomentar el cuidado del medio ambiente 
+          a través de la difusión de conocimiento, la concientización y el voluntariado.
+        </p>
+      </div>
+    </div>
+
+    <div class=picture-box></div>
+  </div>
+  <div class="fixed-alignment"> 
+    
+    <div class=picture-box2></div>
+
+    <div class="text-box2">
+      <div class="text-quienes-somos">
+        <h1>Nuestra historia</h1>
+        <br>
+        <p>
+          La asociación Raíces nace en el año 2017 como una iniciativa de Miguel Artiga, Wendy Ramos y Rebeca Luque, alumnos de la Escuela Superior de Economía y Negocios, que observaron que en la universidad no habían contenedores de basura para fines de reciclaje.
+          Por ello, idearon un proyecto que permitiera realizar actividades de reciclaje, reforestación, limpieza u otra afín, pero que de forma simultánea educara y concientizara a los alumnos involucrados. 
+          Con la colaboración de maestros de la universidad y otros compañeros, consolidaron la asociación Raíces que día con día promete impactar en la educación integral de los alumnos y futuros profesionales de la ESEN
+        </p>
+      </div>
+    </div>
+
+    
+  </div>
+
+
+  
+  <div class="">
+      <div class="mision-cover"></div>
+  
+      <div class="MVV-container">
+        <div> 
+          <i><img src="../../static/media/mision.png" alt=""></i>
+          <h3>Misión</h3>
+          <p class="MVV-text">
+            Crear conciencia medioambiental a través de charlas con expertos, dando a conocer las buenas prácticas de las empresas con experiencia en el tema, compartiendo tips para una vida ecofriendly y facilitando la toma en contacto con la naturaleza a través del voluntariado.
+          </p>
+        </div>
+  
+        <div id="img-MVV"></div>
+  
+        <div>
+          <i><img src="../../static/media/vision.png" alt=""></i>
+          <h3>Visión</h3>
+          <p class="MVV-text">
+            Proveer a la sociedad salvadoreña y a la región de líderes conscientes que apliquen sus conocimientos sobre el medioambiente en todo lo que hacen con el fin de lograr un desarrollo sostenible y responsable.
+          </p>
+        </div>
+  
+      </div>
+      
+  </div>
+  
+  
+  <div class="frase">
+    <h2>"Be part of the solution, not the pollution."</h2>
+  </div>
+  
+  <h2 id="junta-titulo">Conoce a nuestro equipo</h2><br />
+  
+  <div class="center-contacts">
+  <div class="bloque_miembros">
+    {% for person in JDList %}
+    <div class="caja_ref">
+      <h3 class="caja_ref_titulo">{{ person.nombre}} {{person.apellido}}</h3>
+      <img src="{{person.link}}" class="imagen_ref" /><br />
+      <p class="caja_ref_parrafo"> {{ person.cargo}} </p>
+      <br />
+      <p class="caja_ref_parrafo">
+        <i class="fa-solid fa-envelope"></i> {{person.correo}}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+
+
+  
+  {% endblock %}
+  

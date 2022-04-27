@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styleMain.css')}}" />
+    <script
+      src="https://kit.fontawesome.com/bfe61dead8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a class="active" href="{{ url_for('main.home') }}">Inicio</a></li>
+        <li><a href="{{ url_for('main.about') }}">¿Quiénes somos?</a></li>
+        <li><a href="{{ url_for('main.activities') }}">Actividades</a></li>
+        <li><a href="{{ url_for('main.contact') }}">Contacto</a></li>
+        <li class="login">
+        {% if user.is_authenticated %}
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn"><i class="fa-regular fa-circle-user"></i></button>
+                <div class="dropdown-content">
+                {% if user.cargo == "Admin" or user.cargo == "admin"%}
+                <a href="{{ url_for('admin.dashboard') }}">Dashboard</a>
+                {% else %}
+                <a href="{{ url_for('main.profile') }}">Perfil</a>
+                {% endif %}
+                <a href="{{ url_for('main.logout') }}">Desloguear</a> 
+                </div>
+            </div> 
+            
+        {% else %}
+          <a href="{{ url_for('main.login') }}">Iniciar sesión</a>
+        {% endif %}
+        </li>
+      </ul>
+    </div>
+
+    {% block contents %}{% endblock %}
+
+  </body>
+</html>

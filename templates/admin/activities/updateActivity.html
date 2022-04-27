@@ -1,0 +1,138 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Modificar actividad{% endblock %}
+{%block contents %}
+<h1>Modificar actividad</h1>
+
+
+<div class="newAct-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="newAct-text">
+        
+        <h1>Modificar actividad</h1>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="center-items">
+
+  <form id="form-addActivity" action="{{ url_for('admin.updateActivity', idActividad=idActividad) }}" method="post">
+    {{ form.hidden_tag() }}
+
+  <div class="form-container">
+
+    <div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.descripcion.label }}
+      </div>
+      <div class="col-75">
+        {{ form.descripcion(value=currentActividad.descripcion) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.nombre.label }}
+      </div>
+      <div class="col-75">
+        {{ form.nombre(value=currentActividad.nombreActividad) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.tipoActividad.label }}
+      </div>
+      <div class="col-75">
+        {{ form.tipoActividad(value=currentActividad.tipoActividad) }}
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          {{ form.lugarActividad.label }}
+        </div>
+        <div class="col-75">
+          {{ form.lugarActividad(value=currentActividad.lugarActividad) }}
+        </div>
+    </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.tipoHoras.label }}
+        </div>
+        <div class="col-75">
+          {{ form.tipoHoras(value=currentActividad.tipoHoras) }}
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.fechaInicio.label }}
+        </div>
+        <div class="col-75">
+          {{ form.fechaInicio }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.fechaFinal.label }}
+        </div>
+        <div class="col-75">
+          {{ form.fechaFinal }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.horasSociales.label }}
+        </div>
+        <div class="col-75">
+          {{ form.horasSociales(value=currentActividad.horasSociales) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.cuposTotales.label }}
+        </div>
+        <div class="col-75">
+          {{ form.cuposTotales(value=currentActividad.cuposTotales) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.Estado.label }}
+        </div>
+        <div class="col-75">
+          {{ form.Estado(value=currentActividad.Estado) }}
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{ form.submit }}
+  </div>  
+
+  </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends './main/baseMain.html' %} {% block title %}Actividades{% endblock %}
+{% block contents %}
+<h1>Actividades</h1>
+
+<div class="actividades-container">
+    <div class="inicio">
+        <div class="box1">
+        <div class="actividad-text"> 
+            <h1>Conoce más</h1> 
+            <h1>acerca de nuestras actividades</h1>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div style="padding: 50px 0px 50px 0px;">
+{% for activity in activitiesList %}
+    <section>
+        <div class="containerontop" id="about-us-container">
+            {% if  activity.tipoActividad == 1%}
+            <div class="left"></div>
+            {% elif  activity.tipoActividad == 2 %}
+            <div class="left1"></div>
+            {% elif  activity.tipoActividad == 3 %}
+            <div class="left2"></div>
+            {% else %}
+            <div class="left3"></div>
+            {% endif %}            
+            <div class="right">
+                <div  class="content-act" id="{{activity.idActividad}}">
+                    <h1>{{activity.nombreActividad}}</h1>
+                    <p>{{activity.descripcion}}</p>
+                    <p>Número de cupos: {{activity.cuposTotales}} </p><br><br>
+                        {% if activity.idActividad in ins_act  %}
+                            <div class="btn-actividad">
+                                <button class="btn-act">
+                                    Inscrito
+                                </button>
+                            </div>    
+                        {% else %}
+                            <a class="btn-actividad" href="{{ url_for('main.inscripcion', idActividad=activity.idActividad) }}">
+                                <button class="btn-act">
+                                    Inscribirse
+                                </button>
+                            </a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endfor %}
+
+
+
+
+
+{% endblock %}

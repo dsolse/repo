@@ -1,0 +1,79 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Modificar inscripción{% endblock %}
+{%block contents %}
+<h1>Modificar inscripción</h1>
+
+
+<div class="newAct-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="newAct-text">
+        
+        <h1>Modificar inscripción</h1>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="center-items">
+
+  <form id="form-addActivity" action="{{ url_for('admin.updateInscripcion', idInsc=idInsc) }}" method="post">
+    {{ form.hidden_tag() }}
+
+  <div class="form-container">
+
+    <div>
+
+        <div class="row">
+        <div class="col-25">
+            {{ form.asistencia.label }}
+        </div>
+        <div class="col-75">
+            {{ form.asistencia }}
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+            {{ form.pago.label }}
+        </div>
+        <div class="col-75">
+            {{ form.pago }}
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+            {{ form.cantidadKg.label }}
+        </div>
+        <div class="col-75">
+            {{ form.cantidadKg }}
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+            {{ form.evidencia.label }}
+            </div>
+            <div class="col-75">
+            {{ form.evidencia }}
+            </div>
+        </div>
+
+    </div>
+
+    
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{ form.submit }}
+  </div>  
+
+  </form>
+</div>
+
+
+{% endblock %}

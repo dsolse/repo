@@ -1,0 +1,67 @@
+{% extends './main/baseMain.html' %} 
+
+{% block title %}Perfil{% endblock %} 
+
+{% block contents %}
+
+<div class="grid-perfil">
+    <div style="margin: 50px 0px 0px 80px">
+        <img src="../../static/media/avatar.png"  class="foto-perfil" alt="" />
+    </div>
+    <div class="perfil-datos">
+        <p class="dato"><b>Nombre:</b> {{user.nombre}} </p>
+        <p class="dato"><b>Apellido:</b> {{user.apellido}} </p>
+        <p class="dato"><b>Correo electronico:</b>  {{user.correo}}</p>
+        <p class="dato"><b>Telefono:</b>  {{user.telefono}}</p>
+        <p class="dato"><b>Año de Ingreso a la Escuela:</b>  {{user.anno}}</p>
+        {% if user.carrera == "1" %}
+            <p class="dato"><b>Carrera:</b> Ingeniería de Negocios </p> 
+        {% elif user.carrera == "2" %}
+            <p class="dato"><b>Carrera:</b> Licenciatura en Economía </p> 
+        {% elif user.carrera == "3" %}
+            <p class="dato"><b>Carrera:</b> Licenciatura en Ciencias Jurídicas </p>
+        {% else %}
+            <p class="dato"><b>Carrera:</b> No aplica </p>
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="actividades-user"> 
+    <h1 style="text-align: center; margin: 40px; font-size: 47px">Tus actividades</h1>
+    <table class="tabla-user">
+        <tr>
+            <th colspan="2" >Nombre de la actividad</th>
+            <th>Tipo de horas</th>
+            <th>Cantidad de horas</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de fin</th>
+            <th>Pago</th>
+        </tr>
+        {% for ins, act in ins_act %}
+            <tr class="linea">
+                <td><a href="{{url_for('main.desinscribirse', insc=ins.idInscripcion)}}"><button>Desinscribirse</button></a></td>
+                <td>{{act.nombreActividad}}</td>
+                {% if act.tipoHoras ==1 %}
+                    <td>Medioambientales</td>
+                {% elif act.tipoHoras ==0 %}
+                    <td>Normales</td>
+                {% else %}
+                    <td>Administrativas</td>
+                {% endif %}                
+                <td>{{act.horasSociales}}</td>
+                <td>{{act.fechaInicio}}</td>
+                <td>{{act.fechaFinal}}</td>
+                {% if act.estadoPago ==1 %}
+                    <td>No Aplica</td>
+                {% elif act.estadoPago ==0 %}
+                    <td>Pagado</td>
+                {% else %}
+                    <td>No pagado aún</td>
+                {% endif %}        
+            </tr>
+        {% endfor %}
+    </table>    
+</div>
+
+{% endblock %} 

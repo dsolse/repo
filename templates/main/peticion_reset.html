@@ -1,0 +1,29 @@
+{% extends './main/baseMain.html' %} {% block title %}Resetear contraseña{% endblock %}
+{%block contents %}
+<h1>Resetear contraseña</h1>
+
+<div class="background-image-login">
+<div class="frame">
+  <form action="{{url_for('main.password_refresh')}}" method="post">
+    {{ form.hidden_tag() }}
+    
+
+    <div id="contenedor">
+      <div id="contenedorcentrado">
+        <div id="login">
+          <b>{{ form.correo.label }}</b>
+          <br>
+          {{ form.correo }}
+          <br>
+          <div class="btn-login">
+          {{ form.submit }}
+          </div>
+          <br>
+        </div>
+      </div> 
+    </div>
+  </form>
+</div>
+</div>
+
+{% endblock %}

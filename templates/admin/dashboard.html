@@ -1,0 +1,328 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Dashboard{% endblock %}
+{%block contents %}
+<br> <br> 
+    <div class="verticalBar">
+            <ul>
+        <li><a href="#Miembros">Miembros</a></li>
+        <li><a href="#Inscripciones">Inscripciones</a></li>
+        <li><a href="#Actividades">Actividades</a></li>
+        <li><a href="#Voluntarios">Voluntarios</a></li>
+        <li><a href="#Impacto">Impacto</a></li>
+        <li><a href="#Mensajes">Mensajes</a></li>
+        </ul>
+    </div>
+
+    <div class="bodyDash">
+        <h1>Dashboard</h1>
+        <div id="Miembros">
+            <h2>Miembros</h2> <br>
+            <table class="tablaDash"> <!-- usuarios que son miembros de raices -->
+                <h3>Tabla Miembros</h3>
+                <!-- Se deben printear solo los que tienen cargo=miembro -->
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Año de ingreso a ESEN</th>
+                    <th>Teléfono</th>
+                    <th>Departamento</th>
+                    <th>Correo</th>
+                    <th>Eliminar</th>
+                    <th>Voluntario</th>
+                </tr>
+                {% for miembro in MiembrosFull %}
+                <tr class="">
+                    <td>{{ miembro.idVoluntario }}</td>
+                    <td>{{ miembro.nombre }}</td>
+                    <td>{{ miembro.apellido }}</td>
+                    <td>{{ miembro.anno }}</td>
+                    <td>{{ miembro.telefono }}</td>
+                    <td>{{ miembro.departamento }}</td>
+                    <td>{{ miembro.correo }}</td>
+                    <td><a href="{{ url_for('admin.deleteVoluntario' , idVoluntario=miembro.idVoluntario) }}">Dar de baja</a></td>
+                    <td><a href="{{ url_for('admin.hacerVoluntario' , idVoluntario=miembro.idVoluntario) }}">Hacer voluntario</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <br>
+            <table class="tablaDash"> <!-- junta directiva de raices -->
+                <h2>Junta Directiva</h2> <a href="{{ url_for('admin.addJD') }}"><button> Añadir miembro </button></a>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                    <th>Correo</th>
+                    <th>Link de Foto</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+                {% for miembroJD in JDFull %}
+                    <tr class="">
+                        <td>{{ miembroJD.idPersona }}</td>
+                        <td>{{ miembroJD.nombre }}</td>
+                        <td>{{ miembroJD.apellido }}</td>
+                        <td>{{ miembroJD.cargo }}</td>
+                        <td>{{ miembroJD.correo }}</td>
+                        <td>{{ miembroJD.link }}</td>
+                        <td><a href="{{ url_for('admin.deleteJD' , idPersona=miembroJD.idPersona) }}">Eliminar</a></td>
+                        <td><a href="{{ url_for('admin.updateJD' , idPersona=miembroJD.idPersona) }}">Modificar</a></td>
+                    </tr>
+                {% endfor %}
+                </table>
+        </div>
+
+
+        <div id="Inscripciones">
+            <table class="tablaDash"> <!-- incripciones de actividades de raices -->
+            <h2>Inscripciones</h2>
+            <tr>
+                <th>Id</th>
+                <th>Voluntario</th>
+                <th>Actividad</th>
+                <th>Asistencia</th>
+                <th>Pago</th>
+                <th>Kg de reciclaje</th>
+                <th>Horas totales</th>
+                <th>Evidencia</th>
+                <th>Modificar</th>
+            </tr>
+            {% for ins in InscripcionesFull %}
+                <tr class="">
+                    <td>{{ins.idInscripcion}}</td>
+                    <td>{{ins.idVoluntario}}</td>
+                    <td>{{ins.idActividad}}</td>
+                    {% if ins.estadoAsistencia == 1 %}
+                        <td>Asistió</td>
+                    {% elif ins.estadoAsistencia == 2 %}
+                        <td>No Asistió</td>
+                    {% elif ins.estadoAsistencia == 3 %}
+                        <td>Canceló</td>
+                    {% endif %}
+                    {% if ins.estadoPago == 1 %}
+                        <td>Pagado</td>
+                    {% elif ins.estadoPago == 2 %}
+                        <td>No Pagado</td>
+                    {% elif ins.estadoPago == 3 %}
+                        <td>No Aplica</td>
+                    {% endif %}
+                    <td>{{ins.cantidadKg}}</td>
+                    <td>{{ins.horasTotales}}</td>
+                    {% if ins.evidencia == 1 %}
+                        <td>Enviada</td>
+                    {% elif ins.evidencia == 2 %}
+                        <td>No Enviada</td>
+                    {% elif ins.evidencia == 3 %}
+                        <td>No Aplica</td>
+                    {% endif %}
+                    <td><a href="{{url_for('admin.updateInscripcion', idInsc = ins.idInscripcion)}}">Modificar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        
+        </div>
+
+
+        <div id="Actividades">
+            <h2>Actividades</h2><a href="{{ url_for('admin.addActivity') }}"><button> Añadir Actividad </button></a>
+            <table class="tablaDash"> <!-- actividades de raices -->
+                <tr>
+                    <th>Id</th>
+                    <th>Descripción</th>
+                    <th>Nombre</th>
+                    <th>Tipo Actividad</th>
+                    <th>Ubicación</th>
+                    <th>Tipo de Horas</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Final</th>
+                    <th>Cantidad de Horas</th>
+                    <th>Cupos</th>
+                    <th>Estado</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                    <th>Descargar excel</th>
+                </tr>
+                {% for act in ActividadesFull %}
+                <tr class="">
+                    <td>{{act.idActividad}}</td>
+                    <td>{{act.descripcion}}</td>
+                    <td>{{act.nombreActividad}}</td>
+                    {% if act.tipoActividad == 1 %}
+                        <td>Limpieza</td>
+                    {% elif act.tipoActividad == 2 %}
+                        <td>Reciclaje</td>
+                    {% elif act.tipoActividad == 3 %}
+                        <td>Charlas</td>
+                    {% else %}
+                        <td>Otro tipo</td>
+                    {% endif %}
+                    <td>{{act.lugarActividad}}</td>
+                    {% if act.tipoHoras == 1 %}
+                        <td>Medioambientales</td>
+                    {% elif act.tipoHoras == 2 %}
+                        <td>Normales</td>
+                    {% elif act.tipoHoras == 3 %}
+                        <td>Administrativas</td>
+                    {% endif %}
+                    <td>{{act.fechaInicio}}</td>
+                    <td>{{act.fechaFinal}}</td>
+                    <td>{{act.horasSociales}}</td>
+                    <td>{{act.cuposTotales}}</td>
+                    {% if act.estado == 0 %}
+                        <td>Cancelada</td>
+                    {% elif act.estado == 1 %}
+                        <td>Terminada</td>
+                    {% elif act.estado == 2 %}
+                        <td>En progreso</td>
+                    {% endif %}
+                    <td><a href="{{ url_for('admin.deleteActividad' , idActividad=act.idActividad) }}">Eliminar</a></td>
+                    <td><a href="{{ url_for('admin.updateActivity' , idActividad=act.idActividad) }}">Modificar</a></td>
+                    <td>
+                        {% if act.estado == 1 %}
+                        <form style="width:fit-content; margin:0; padding:0" class="btn-actividad" action="{{url_for("admin.download_excel", idAct=act.idActividad)}}">
+                            <input type="submit" value="Descargar" />
+                        </form>
+                        {% else %}
+                        No disponible
+                        {% endif %}
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+                            </table>
+        </div>
+
+
+        <div id="Voluntarios">
+            <h2>Voluntarios</h2> 
+            <!-- Se deben printear los que Departamento=NA -->
+            <table class="tablaDash"> <!-- voluntarios de raices -->
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Año de ingreso a ESEN</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Eliminar</th>
+                    <th>Miembro</th>
+                </tr>
+                <tr class="">
+                    {% for miembro in VoluntarioFull %}
+                    <tr class="">
+                        <td>{{ miembro.idVoluntario }}</td>
+                        <td>{{ miembro.nombre }}</td>
+                        <td>{{ miembro.apellido }}</td>
+                        <td>{{ miembro.anno }}</td>
+                        <td>{{ miembro.telefono }}</td>
+                        <td>{{ miembro.correo }}</td>
+                        <td><a href="{{ url_for('admin.deleteVoluntario' , idVoluntario=miembro.idVoluntario) }}">Dar de baja</a></td>
+                        <td><div onclick="showSelect('{{miembro.idVoluntario}}')">Hacer miembro</div></td>
+                        <td id="volun-{{miembro.idVoluntario}}" style="display:none">
+                            <form action="{{ url_for('admin.hacerMiembro' , idVoluntario=miembro.idVoluntario) }}" method="post">
+                                <select name="position" id="position">
+                                    <option value="Operaciones">Operaciones</option>
+                                    <option value="Finanzas">Finanzas</option>
+                                    <option value="Trips">Trips</option>
+                                </select>
+                                <div style="display: flex;justify-content:space-evenly;">
+                                    <h3 onclick="hideSelect('{{miembro.idVoluntario}}')">Hide</h3>
+                                    <input type="submit" value="Add">
+                                </div> 
+                            </form>
+                        </td> 
+                    </tr>
+                    <script>
+                        function showSelect(idVol) {
+                            let tdForm = document.getElementById("volun-" + idVol);
+                            tdForm.setAttribute("style", "display:inline-block")
+                        }
+
+                        function hideSelect(idVol) {
+                            let tdForm = document.getElementById("volun-" + idVol);
+                            tdForm.setAttribute("style", "display:none")
+                        }
+                    </script>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="Impacto">
+            <table class="tablaDash"> <!-- impacto de actividades de raices -->
+            <h2>Impacto</h2>
+            <tr>
+                <th>Árboles</th>
+                <th>Kilogramos reciclados</th>
+                <th>Voluntarios</th>
+                <th>Tortugas liberadas</th>
+                <th>Modificar</th>
+            </tr>
+                {% for dato in currentDato%}
+                    <tr class="">
+                        <td>{{dato.numArboles}}</td>
+                        <td>{{dato.cantRec}}</td>
+                        <td>{{dato.numVoluntarios}}</td>
+                        <td>{{dato.numCharlas}}</td>
+                        <td><a href="{{ url_for('admin.updateDatos' , idDatos=dato.idDatos) }}">Modificar</a></td>
+                    </tr>
+                {% endfor %}
+        </table>
+        </div>
+
+        <div id="Mensajes">
+            <h2>Mensajes</h2>
+            <table class="tablaDash"> <!-- mensajes de contacto -->
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Mensaje</th>
+                    <th>Estado</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+                {% for mes in MessagesFull%}
+                    <tr class="">
+                        <td>{{mes.idContacto}}</td>
+                        <td>{{mes.nombre}}</td>
+                        <td>{{mes.apellido}}</td>
+                        <td>{{mes.telefono}}</td>
+                        {% if mes.mensaje.startswith("Reset password>>") %}
+                            <td>
+                                Petición para resetear contraseña: correo {{mes.mensaje.replace('Reset password>>', '').split(";")[0]}} 
+                                <a href="{{url_for('admin.generate_link', id=mes.mensaje.replace('Reset password>>', '').split(";")[1], correo=mes.mensaje.replace('Reset password>>', '').split(";")[0])}}">
+                                    <button>
+                                        Generar link
+                                    </button>
+                                </a>
+                            </td>
+                        {% else %}
+                            <td>{{mes.mensaje}}</td>
+                        {% endif %}
+                        {% if mes.estado == 0 %}
+                            <td>No Leído</td>
+                        {% else %}
+                            <td>Leído</td>
+                        {% endif %}
+                        
+                        <td><a href="{{ url_for('admin.deleteMessage' , idContacto=mes.idContacto) }}">Eliminar</a></td>
+                        {% if mes.estado == 0 %}
+                            <td><a href="{{ url_for('admin.changeStatusMessage' , idContacto=mes.idContacto) }}">Marcar como Leído</a></td>
+                        {% elif mes.estado == 1 %}
+                            <td><a href="{{ url_for('admin.changeStatusMessage', idContacto=mes.idContacto) }}">Marcar como No Leído</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+            
+        </div>
+        <br>
+
+    </div>
+
+    {% endblock %}

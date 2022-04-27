@@ -1,0 +1,80 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Modificar Datos{% endblock %}
+{%block contents %}
+<h1>Modificar Datos</h1>
+
+
+<div class="newAct-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="newAct-text">
+        
+        <h1>Modificar Datos</h1>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="center-items">
+
+  <form id="form-addActivity" action="{{ url_for('admin.updateDatos', idDatos=idDatos) }}" method="post">
+    {{ form.hidden_tag() }}
+
+  <div class="form-container">
+
+    <div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.numArboles.label }}
+      </div>
+      <div class="col-75">
+        {{ form.numArboles(value=currentDato.numArboles) }}
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          {{ form.cantRec.label }}
+        </div>
+        <div class="col-75">
+          {{ form.cantRec(value=currentDato.cantRec) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.numVoluntarios.label }}
+        </div>
+        <div class="col-75">
+          {{ form.numVoluntarios(value=currentDato.numVoluntarios) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.numCharlas.label }}
+        </div>
+        <div class="col-75">
+          {{ form.numCharlas(value=currentDato.numCharlas) }}
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{ form.submit }}
+  </div>  
+
+  </form>
+</div>
+
+
+{% endblock %}

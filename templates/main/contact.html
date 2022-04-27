@@ -1,0 +1,126 @@
+{% extends './main/baseMain.html' %} {% block title %}Contacto{% endblock %}
+{%block contents %}
+<h1>Contacto</h1>
+
+
+<div class="contact-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="contact-text">
+        
+        <h1>Contáctanos</h1>
+        
+        <div class="redes-sociales">
+          <div class="redes-iconos">
+            <i class="fa-solid fa-envelope"></i>
+            <a class="" href="mailto: raicesesen@gmail.com">raicesesen@gmail.com</a>
+          </div>
+          <div class="redes-iconos">
+            <i class="fa-brands fa-instagram"></i>
+            <a class="icon" href="https://www.instagram.com/raices.esen/?hl=es-la" target="_blank" >@raices.esen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="center-items">
+
+  <form id="form-contact" action="{{ url_for('main.contact') }}" method="post">
+    {{ form.hidden_tag() }}
+
+  <div class="form-container">
+  
+    <div>
+    <div class="row">
+      <div class="col-25">
+        {{ form.nombre.label }}
+        <!-- <label for="fname">Nombre</label> -->
+      </div>
+      <div class="col-75">
+        {{ form.nombre }}
+        <!-- <input type="text" id="fname" name="firstname" placeholder="Ingresa tu nombre.."> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        {{ form.apellido.label }}
+        <!-- <label for="lname">Apellido</label> -->
+      </div>
+      <div class="col-75">
+        {{ form.apellido }}
+        <!-- <input type="text" id="lname" name="lastname" placeholder="Ingresa tu apellido.."> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        {{ form.telefono.label }}
+        <!-- <label for="country">Teléfono</label> -->
+      </div>
+      <div class="col-75">
+        {{ form.telefono }}
+        <!-- <input type="text" id="lname" name="lastname" placeholder="Ingresa tu número telefónico.."> -->
+      </div>
+    </div>
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col-75">
+          {{ form.text_area(style="height:325px") }}
+          <!-- <textarea id="subject" name="subject" placeholder="Déjanos un mensaje.." style="height:325px"></textarea> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{ form.submit }}
+    <!-- <input type="submit" value="Enviar"> -->
+  </div>  
+
+  <div class="center-btn-message">
+    <input type="checkbox" id="click">
+    <!-- <label for="click" class="click-me">Enviar</label> -->
+    <div class="content">
+        <div class="header-pop-up">
+            <h2>Mensaje enviado</h2>
+            <label id="close-button-x" for="click" class="fas fa-times"></label>
+        </div>
+        <label for="click" class="fas fa-check"></label>
+        <p>¡Tu mensaje ha sido enviado con éxito! Nos comunicaremos contigo lo más pronto posible.</p>
+        <div class="line"></div>
+        <label for="click" class="close-btn">Cerrar</label>
+    </div>
+  </div>
+
+
+  </form>
+
+  
+{% if is_posted %}
+<script>
+  let form = document.getElementById("form-contact")
+  form.scrollIntoView();
+  let popUp = document.querySelector(".content");
+  popUp.setAttribute("style", "visibility:visible;opacity:1;");
+
+  let btnClose = document.querySelector(".close-btn");
+  let btnCloseX = document.querySelector("#close-button-x");
+  function changeVisi() {
+    popUp.setAttribute("style", "visibility:hidden;opacity:0;")
+  }
+  btnClose.onclick = changeVisi
+  btnCloseX.onclick = changeVisi 
+</script>
+{% endif %}
+
+</div>
+
+{% endblock %}

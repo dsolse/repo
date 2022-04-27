@@ -1,0 +1,10 @@
+__pycache__
+__pycache__/*
+.pytest_cache
+.nvimlog
+horas_sociales.xlsx
+logins/*
+.vscode/*
+Pipfile
+Pipfile.lock
+raices.db

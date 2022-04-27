@@ -1,0 +1,109 @@
+
+.verticalBar  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    margin-top: 60px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .verticalBar li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .verticalBar li a.active {
+    background-color: #73ab84;
+    color: white;
+  }
+  
+  .verticalBar li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+  .bodyDash {
+    margin-left:15%;
+    padding:1px 16px;
+    height:1000px;
+    margin-top: 20px;
+  }
+
+  .tablaDash {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .tablaDash td, .tablasdash th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .tablaDash tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .tablaDash tr:hover {background-color: #ddd;}
+  
+  .tablaDash th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+/* nueva actividad ------------------------------------------------------ */
+
+.newAct-container {
+  width: 100%;
+  height: 40vh;
+  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url(../../static/media/guantes-y-planta.jpg);
+  background-size: cover;
+}
+
+.inicio {
+  text-align: center;
+  padding-top: 250px;
+}
+.newAct-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.newAct-text h1 {
+  font-size: 70px;
+  color: white;
+}
+
+input[type=text],input[type=date],input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #8ab9bb;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #2e7072;
+}
+
+

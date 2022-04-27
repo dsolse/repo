@@ -1,0 +1,101 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Modificar miembro{% endblock %}
+{%block contents %}
+<h1>Modificar miembro</h1>
+
+
+<div class="newAct-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="newAct-text">     
+        <h1>Modificar miembro</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="center-items">
+
+  <form id="form-addActivity" action="{{ url_for('admin.updateJD', idPersona=idPersona) }}" method="post">
+    {{ form.hidden_tag() }}
+
+    <div class="form-container">
+
+    <div>
+    
+      <div class="row">
+        <div class="col-25">
+          {{ form.nombre.label }}
+        </div>
+        <div class="col-75">
+          {{ form.nombre(value=currentJD.nombre) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.apellido.label }}
+        </div>
+        <div class="col-75">
+          {{ form.apellido(value=currentJD.apellido) }}
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-25">
+            {{ form.cargo.label }}
+          </div>
+          <div class="col-75">
+            {{ form.cargo(value=currentJD.cargo) }}
+          </div>
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.correo.label }}
+        </div>
+        <div class="col-75">
+          {{ form.correo(value=currentJD.correo) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.link.label }}
+        </div>
+        <div class="col-75">
+          {{ form.link(id="link-image-id", value=currentJD.link) }}
+          <img id="preview-link" src="" alt="image-preview">
+          <script>
+            function previewImage(event) {
+              event.preventDefault();
+              const sharingLink = "https://drive.google.com/uc?id="; 
+              const image = document.getElementById("preview-link");
+              const inputText = document.getElementById("link-image-id");
+              const link = inputText.value
+              const idLinkDrive = link.replace("https://drive.google.com/uc?id=", "").replace("/view", "").replace("https://drive.google.com/file/d/", "")
+              image.src = sharingLink + idLinkDrive; 
+            }
+          </script>
+    
+          <button onclick="previewImage(event)">Ver imagen</button>
+        </div>
+      </div>
+    
+    </div>
+
+    </div>
+  <br>
+
+      <div class="row">
+        {{ form.submit }}
+      </div>  
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

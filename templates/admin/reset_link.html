@@ -1,0 +1,39 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}Reset link{% endblock %}
+{%block contents %}
+<h1>Reset link</h1>
+
+<div class="background-image-login">
+<div class="frame">
+  <form method="post">
+    <div id="contenedor">
+      <div id="contenedorcentrado">
+        <div id="login">
+          <b>Link para resetear contraseña</b>
+          <br>
+            <input type="text" name="link" id="link" value="{{link}}">
+          <br>
+          <script>
+            function toClip(event) { 
+                event.preventDefault()
+                inputField = document.getElementById("link");
+                inputField.select()
+                navigator.clipboard.writeText(inputField.value)
+            }
+          </script>
+          <div class="btn-login">
+                <button onclick="toClip(event)">Copy</button>
+          </div>
+          <div class="btn-login">
+            <a href="{{url_for('admin.dashboard')}}">
+                <b>Retornar</b>
+            </a>
+          </div>
+          <br>
+        </div>
+      </div> 
+    </div>
+  </form>
+</div>
+</div>
+
+{% endblock %}

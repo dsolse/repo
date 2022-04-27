@@ -1,0 +1,144 @@
+{% extends './admin/baseAdmin.html' %} {% block title %}New Activity{% endblock %}
+{%block contents %}
+<h1>New Activity</h1>
+
+
+<div class="newAct-container">
+  <div class="inicio">
+    <div class="box1">
+      <div class="newAct-text">
+        
+        <h1>Nueva Actividad</h1>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="center-items">
+
+  <form id="form-addActivity" action="{{ url_for('admin.addActivity') }}" method="post">
+    {{ form.hidden_tag() }}
+
+  <div class="form-container">
+    
+    <div>
+    
+    <div class="row">
+      <div class="col-25">
+        {{ form.descripcion.label }}
+      </div>
+      <div class="col-75">
+        {{ form.descripcion }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.nombre.label }}
+      </div>
+      <div class="col-75">
+        {{ form.nombre }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.tipoActividad.label }}
+      </div>
+      <div class="col-75">
+        {{ form.tipoActividad }}
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          {{ form.lugarActividad.label }}
+        </div>
+        <div class="col-75">
+          {{ form.lugarActividad }}
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        {{ form.tipoHoras.label }}
+      </div>
+      <div class="col-75">
+        {{ form.tipoHoras }}
+      </div>
+    </div>
+
+    </div>
+
+    <div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.fechaInicio.label }}
+        </div>
+        <div class="col-75">
+          {{ form.fechaInicio }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.fechaFinal.label }}
+        </div>
+        <div class="col-75">
+          {{ form.fechaFinal }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.horasSociales.label }}
+        </div>
+        <div class="col-75">
+          {{ form.horasSociales }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          {{ form.cuposTotales.label }}
+        </div>
+        <div class="col-75">
+          {{ form.cuposTotales }}
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+    
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{ form.submit }}
+  </div>  
+
+  </form>
+</div>
+
+{% if is_posted %}
+<script>
+  let form = document.getElementById("form-contact")
+  form.scrollIntoView();
+  let popUp = document.querySelector(".content");
+  popUp.setAttribute("style", "visibility:visible;opacity:1;");
+
+  let btnClose = document.querySelector(".close-btn");
+  let btnCloseX = document.querySelector("#close-button-x");
+  function changeVisi() {
+    popUp.setAttribute("style", "visibility:hidden;opacity:0;")
+  }
+  btnClose.onclick = changeVisi
+  btnCloseX.onclick = changeVisi 
+</script>
+{% endif %}
+
+{% endblock %}

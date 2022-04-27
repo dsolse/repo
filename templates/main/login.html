@@ -1,0 +1,47 @@
+{% extends './main/baseMain.html' %} {% block title %}Iniciar Sesión{% endblock %}
+{%block contents %}
+<h1>Iniciar sesión</h1>
+
+<div class="background-image-login">
+<div class="frame">
+  <form method="post">
+    {{ form.hidden_tag() }}
+    
+
+    <div id="contenedor">
+      <div id="contenedorcentrado">
+        <div id="login">
+          <b>{{ form.correo.label }}</b>
+          <br>
+          {{ form.correo }}
+          <br>
+          <b>{{ form.contrasenna.label }}</b>
+          <br>
+          {{ form.contrasenna }}
+          <br>
+
+          <div class="recuerdame-contra">
+            <div>
+            <input type="checkbox" checked="checked" name="remember" /> Recuérdame
+            </div>
+            <div>
+            <span class="psw"><a href="{{url_for('main.password_refresh')}}">¿Olvidaste tu contraseña?</a></span>
+            </div>
+          </div>
+
+          <br>
+          <div class="btn-login">
+          {{ form.submit }}
+          </div>
+          <br>
+          <label>
+          <span class="registrate">¿No tienes una cuenta? <a href="{{ url_for('main.register') }}">¡Regístrate!</a></span>
+          </label>
+        </div>
+      </div> 
+    </div>
+  </form>
+</div>
+</div>
+
+{% endblock %}
