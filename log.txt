@@ -1,0 +1,101 @@
+
+self._invalid_transaction()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 543, in _invalid_transaction
+raise exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: Can't reconnect until invalid transaction is rolled back. (Background on this error at: https://sqlalche.me/e/14/8s2b)
+10.1.37.233 - - [27/Apr/2022:22:46:32 +0000] "GET / HTTP/1.1" 500 290 "https://raices-sv.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/" host=raices-sv.herokuapp.com request_id=17e102f7-f1cd-4cbd-856d-af74f9651835 fwd="190.87.162.117" dyno=web.1 connect=0ms service=10ms status=500 bytes=463 protocol=https
+10.1.37.233 - - [27/Apr/2022:22:46:32 +0000] "GET /favicon.ico HTTP/1.1" 404 232 "https://raices-sv.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/favicon.ico" host=raices-sv.herokuapp.com request_id=d9a40974-8a48-4c51-aea9-cbaf1265ebaa fwd="190.87.162.117" dyno=web.1 connect=0ms service=5ms status=404 bytes=393 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:37 +0000] "GET /profile HTTP/1.1" 302 250 "https://raices-sv.herokuapp.com/contact?is_posted=True" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/profile" host=raices-sv.herokuapp.com request_id=663d99c3-eec6-4c43-8645-ed0069e1db0d fwd="190.87.162.117" dyno=web.1 connect=0ms service=6ms status=302 bytes=733 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:37 +0000] "GET /login?next=%2Fprofile HTTP/1.1" 200 2369 "https://raices-sv.herokuapp.com/contact?is_posted=True" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/login?next=%2Fprofile" host=raices-sv.herokuapp.com request_id=30f9e21b-2acf-4073-b25f-c672e496713b fwd="190.87.162.117" dyno=web.1 connect=0ms service=9ms status=200 bytes=2785 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:38 +0000] "GET /static/css/styleMain.css HTTP/1.1" 200 0 "https://raices-sv.herokuapp.com/login?next=%2Fprofile" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/css/styleMain.css" host=raices-sv.herokuapp.com request_id=f67a3eaf-f7d1-4fd3-a18a-16b969ae31b1 fwd="190.87.162.117" dyno=web.1 connect=0ms service=3ms status=200 bytes=26174 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:38 +0000] "GET /static/media/background-tree.jpg HTTP/1.1" 304 0 "https://raices-sv.herokuapp.com/static/css/styleMain.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/media/background-tree.jpg" host=raices-sv.herokuapp.com request_id=e6121e5a-a70d-4cea-8ad1-48479e6a7521 fwd="190.87.162.117" dyno=web.1 connect=0ms service=2ms status=304 bytes=187 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:39 +0000] "GET /login HTTP/1.1" 200 2369 "https://raices-sv.herokuapp.com/login?next=%2Fprofile" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/login" host=raices-sv.herokuapp.com request_id=c8a04e90-a4ae-45e3-8c8e-ea5e72c76069 fwd="190.87.162.117" dyno=web.1 connect=0ms service=4ms status=200 bytes=2785 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:39 +0000] "GET /static/css/styleMain.css HTTP/1.1" 304 0 "https://raices-sv.herokuapp.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/css/styleMain.css" host=raices-sv.herokuapp.com request_id=4a39443c-249a-48a1-b8b4-9a5a00b70857 fwd="190.87.162.117" dyno=web.1 connect=0ms service=10ms status=304 bytes=181 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:39 +0000] "GET /static/media/background-tree.jpg HTTP/1.1" 304 0 "https://raices-sv.herokuapp.com/static/css/styleMain.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/media/background-tree.jpg" host=raices-sv.herokuapp.com request_id=206cb96b-b9a4-4991-8e4f-fae1d8756cdc fwd="190.87.162.117" dyno=web.1 connect=0ms service=3ms status=304 bytes=187 protocol=https
+[2022-04-27 22:46:42,243] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+response = self.full_dispatch_request()
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+rv = self.handle_user_exception(e)
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+rv = self.dispatch_request()
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+File "/app/routes/main/main.py", line 27, in home
+if not Datos.query.all():
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in all
+return self._iter().all()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+result = self.session.execute(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+result = conn._execute_20(statement, params or {}, execution_options)
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
+return meth(self, args_10style, kwargs_10style, execution_options)
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+return connection._execute_clauseelement(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
+ret = self._execute_context(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+conn = self._revalidate_connection()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 571, in _revalidate_connection
+self._invalid_transaction()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 543, in _invalid_transaction
+raise exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: Can't reconnect until invalid transaction is rolled back. (Background on this error at: https://sqlalche.me/e/14/8s2b)
+10.1.40.109 - - [27/Apr/2022:22:46:42 +0000] "GET / HTTP/1.1" 500 290 "https://raices-sv.herokuapp.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/" host=raices-sv.herokuapp.com request_id=1951f484-85d2-4a74-82eb-87450933ecde fwd="190.87.162.117" dyno=web.1 connect=0ms service=3ms status=500 bytes=463 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:45 +0000] "GET / HTTP/1.1" 200 7838 "https://raices-sv.herokuapp.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/" host=raices-sv.herokuapp.com request_id=d0f29b28-4cee-4ce2-998c-62363f4d9b90 fwd="190.87.162.117" dyno=web.1 connect=0ms service=19ms status=200 bytes=8254 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:45 +0000] "GET /static/css/styleMain.css HTTP/1.1" 304 0 "https://raices-sv.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/css/styleMain.css" host=raices-sv.herokuapp.com request_id=e1092305-9842-4d27-aabd-f158da8f3fae fwd="190.87.162.117" dyno=web.1 connect=0ms service=5ms status=304 bytes=181 protocol=https
+10.1.40.109 - - [27/Apr/2022:22:46:45 +0000] "GET /static/javascript/main.js HTTP/1.1" 304 0 "https://raices-sv.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/javascript/main.js" host=raices-sv.herokuapp.com request_id=b50ae035-8525-4fb5-84f0-596d19b61a76 fwd="190.87.162.117" dyno=web.1 connect=0ms service=2ms status=304 bytes=175 protocol=https
+10.1.7.122 - - [27/Apr/2022:22:46:45 +0000] "GET /static/media/fotoInicio.jpg HTTP/1.1" 200 0 "https://raices-sv.herokuapp.com/static/css/styleMain.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/static/media/fotoInicio.jpg" host=raices-sv.herokuapp.com request_id=82198e05-9fd6-4be8-b178-3bd13806f26c fwd="190.87.162.117" dyno=web.1 connect=0ms service=3ms status=200 bytes=38666 protocol=https
+/app/utils/excel_utils/sql_methods.py:27: SAWarning: SELECT statement has a cartesian product between FROM element(s) "usuarios", "actividades" and FROM element "inscripciones".  Apply join condition(s) between each element to resolve.
+).filter(Actividades.idActividad == idActividad).all()   # type: ignore
+[2022-04-27 22:46:51,424] ERROR in app: Exception on /about [GET]
+Traceback (most recent call last):
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+response = self.full_dispatch_request()
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+rv = self.handle_user_exception(e)
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+rv = self.dispatch_request()
+File "/app/.heroku/python/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+File "/app/routes/main/main.py", line 56, in about
+print(get_view_registro_academico_per_act(3))
+File "/app/utils/excel_utils/sql_methods.py", line 27, in get_view_registro_academico_per_act
+).filter(Actividades.idActividad == idActividad).all()   # type: ignore
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in all
+return self._iter().all()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+result = self.session.execute(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+result = conn._execute_20(statement, params or {}, execution_options)
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
+return meth(self, args_10style, kwargs_10style, execution_options)
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+return connection._execute_clauseelement(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
+ret = self._execute_context(
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+conn = self._revalidate_connection()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 571, in _revalidate_connection
+self._invalid_transaction()
+File "/app/.heroku/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 543, in _invalid_transaction
+raise exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: Can't reconnect until invalid transaction is rolled back. (Background on this error at: https://sqlalche.me/e/14/8s2b)
+10.1.7.122 - - [27/Apr/2022:22:46:51 +0000] "GET /about HTTP/1.1" 500 290 "https://raices-sv.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+at=info method=GET path="/about" host=raices-sv.herokuapp.com request_id=2e24c2dc-8d69-4258-b26d-b3be0b473b3f fwd="190.87.162.117" dyno=web.1 connect=0ms service=5ms status=500 bytes=463 protocol=https

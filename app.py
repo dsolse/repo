@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
 from utils.db import db
+from flaskext.mysql import MySQL 
 
 app = Flask(__name__)
 app.config.from_object("config.BaseConfig")
@@ -19,6 +20,8 @@ Bcrypt(app)
 SQLAlchemy(app)
 login_manager.init_app(app)
 Migrate(app, db)
+mysql = MySQL()
+mysql.init_app(app)
 
 
 with app.app_context():
