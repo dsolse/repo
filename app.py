@@ -19,3 +19,7 @@ Bcrypt(app)
 SQLAlchemy(app)
 login_manager.init_app(app)
 Migrate(app, db)
+
+
+with app.app_context():
+    db.create_all()
